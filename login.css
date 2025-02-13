@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: Organetto;
+    src: url(Fontes/Fontspring-DEMO-organetto-ultracndultrabold.otf)
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    font-family: Organetto;
+    text-decoration: none;
+}
+
+.prefeitura a:focus {
+    outline: none;
+}
+
+header {
+    background-color: #00b6bd;
+    padding-inline: 16px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    max-width: 1800px;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prefeitura {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo_prefeitura img {
+    width: 120px;
+    height: auto;
+}
+
+#marca_prefeitura img {
+    width: 150px;
+    height: auto;
+    filter: invert(1) brightness(2);
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-list a {
+    font-size: 35px;
+    color: white;
+    padding-block: 16px;
+}
+
+.nav-list a:hover{
+    color: aquamarine;
+    transition: 1s;
+}
+
+.hamburguer {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid white;
+    cursor: pointer;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+li {
+    list-style: none;
+}
+
+@media (max-width: 750px) {
+    header {
+        height: 200px;
+    }
+
+    .nav {
+        justify-content: space-between;
+        padding-inline: 12px;
+    }
+
+    .prefeitura {
+        gap: 5px;
+    }
+
+    #logo_prefeitura img {
+        width: 150px;
+    }
+
+    #marca_prefeitura img {
+        width: 150px;
+    }
+
+    .hamburguer {
+        display: block;
+        margin-right: 20px;
+        z-index: 3;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        clip-path: circle(100px at 90% -25%);
+        transition: 0.4s ease-out;
+        background: #00b6bd;
+        justify-content: center;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav.active .hamburguer {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+
+    .nav.active .hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+#login {
+    text-align: center;
+    font-family: Organetto;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #00b6bd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #009e9a;
+}
+
+.link-esqueci-senha {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #00b6bd;
+    text-decoration: none;
+}
+
+.link-esqueci-senha:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px);
+}
+
+.footer {
+    background-color: #00b6bd;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
