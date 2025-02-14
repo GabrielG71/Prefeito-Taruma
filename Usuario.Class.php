@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 class Usuario{
 
@@ -7,8 +8,9 @@ class Usuario{
 
         $sql = "SELECT * FROM usuarios WHERE cpf = :cpf and pass = :senha";
         $sql = $pdo->prepare($sql);
-        $sql->bindValue('cpf', $cpf);
-        $sql->bindValue('senha', md5($senha));
+        $sql->bindValue(':cpf', $cpf);
+        $sql->bindValue(':senha', $senha);
+
         $sql->execute();
 
         if($sql->rowCount() > 0){

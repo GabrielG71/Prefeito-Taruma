@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 if(isset($_POST['cpf']) && !empty($_POST['cpf']) && isset($_POST['senha']) && !empty($_POST['senha'])){
     require 'connection.php';
