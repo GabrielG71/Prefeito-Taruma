@@ -1,14 +1,20 @@
 <?php 
 
-$localhost = "localhost:8080";
+$localhost = "localhost:3307";
 $user = "root";
 $passw = "";
 $banco = "transporte";
 
-$connect = mysqli_connect($localhost, $user, $passw, $banco);
+global $pdo;
 
-$sql = mysqli_query($connect, "SELECT * FROM usuarios");
+try{
+    $pdo = new PDO("mysql:dbname=".$banco."; host=".$localhost, $user, $passw);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}catch(PDOException $e){
+    echo"ERRO: ".$e->getMessage();
+    exit;
+}
 
-echo mysqli_num_rows($sql);
+
 
 ?>
