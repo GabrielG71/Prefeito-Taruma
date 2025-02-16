@@ -121,6 +121,9 @@ section.slider{
 .slide-box img{
     width: 100%;
 }
+.grabing{
+    cursor: grab;
+}
 
 .nav-manual, .nav-auto{
     position: absolute;
