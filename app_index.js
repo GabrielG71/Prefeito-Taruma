@@ -25,3 +25,30 @@ function proximaImg(){
 
     document.getElementById('radio'+cont).checked = true
 }
+
+let startX = 0;
+let endX = 0;
+
+
+slider.addEventListener("touchmove", (event) =>{
+  endX = event.touches[0].clientX;
+})
+
+
+slider.addEventListener("touchend", () => {
+  if (startX - endX > 50) {
+    
+    proximaImg();
+  } else if (endX - startX > 50) {
+    
+    cont--;
+    if (cont < 1) {
+      cont = 3;
+    }
+    document.getElementById("radio" + cont).checked = true;
+  }
+  
+  
+  clearInterval(slideInterval);
+  slideInterval = setInterval(proximaImg, 10000);
+});
