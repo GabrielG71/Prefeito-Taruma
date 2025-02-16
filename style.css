@@ -206,7 +206,12 @@ li {
 
 @media (max-width: 750px) {
 
-    
+    .nav-manual{
+        display: none;
+    }
+    .slider-content input[type="radio"] {
+        pointer-events: none;
+      }
     .container-box{
         display: flex;
         align-items: center;
