@@ -25,6 +25,13 @@
     <main>
         <div class="login-container">
             <h2 id="login">Login</h2>
+            <?php
+            session_start();
+            if(isset($_SESSION['erro_login'])) {
+            echo "<p class='erro'>".$_SESSION['erro_login']."</p>";
+            unset($_SESSION['erro_login']);
+            }
+            ?>
             <form action="logar.php" method="POST">
                 <div class="input-group">
                     <label for="cpf">CPF:</label>
