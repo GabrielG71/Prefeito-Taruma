@@ -95,16 +95,21 @@ a {
 }
 
 .hamburguer {
+    display: flex;
     display: none;
+    justify-content: center;
+    align-items: center;
     border: none;
     background: none;
     border-top: 3px solid white;
     cursor: pointer;
+    margin-top: 20px;
+    height: 20px;
 }
 
 .hamburguer::before,
 .hamburguer::after {
-    content: "";
+    content: " ";
     display: block;
     width: 30px;
     height: 3px;
@@ -119,26 +124,13 @@ li {
 }
 
 @media (max-width: 750px) {
-    header {
-        height: 200px;
+    
+    .container-box{
+        display: flex;
+        align-items: center;
     }
+    
 
-    .nav {
-        justify-content: space-between;
-        padding-inline: 12px;
-    }
-
-    .prefeitura {
-        gap: 5px;
-    }
-
-    #logo_prefeitura img {
-        width: 150px;
-    }
-
-    #marca_prefeitura img {
-        width: 150px;
-    }
 
     .hamburguer {
         display: block;
@@ -163,25 +155,23 @@ li {
         pointer-events: none;
     }
 
-    .nav.active .nav-list {
+    .container-box.active .nav-list {
         clip-path: circle(1500px at 90% -15%);
         pointer-events: all;
     }
 
-    .nav.active .hamburguer {
-        position: fixed;
-        top: 26px;
-        right: 16px;
+    .container-box.active .hamburguer {
+        margin-right: 20px;
         border-top-color: transparent;
         padding-top: 20px;
         padding-left: 20px;
     }
 
-    .nav.active .hamburguer::before {
+    .container-box.active .hamburguer::before {
         transform: rotate(135deg);
     }
 
-    .nav.active .hamburguer::after {
+    .container-box.active .hamburguer::after {
         transform: rotate(-135deg);
         top: -7px;
     }
@@ -199,7 +189,7 @@ li {
 
 #login {
     text-align: center;
-    font-family: Organetto;
+    font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
 }
 
