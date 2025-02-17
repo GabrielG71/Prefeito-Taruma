@@ -1,10 +1,8 @@
 <?php
-    session_start();
+session_start();
+require 'connection.php';
 
-    if (!isset($_SESSION['idu'])) {
-        header("Location: login.php");
-        exit;
-    }
+if(isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,7 +22,7 @@
             </div>
             <button class="hamburguer"></button>
             <ul class="nav-list">
-                <li><a href="login.php">DESLOGAR</a></li>
+                <li><a href="logout.php">DESLOGAR</a></li>
             </ul>   
         </nav>
     </header>
@@ -68,3 +66,4 @@
     </footer>
 </body>
 </html>
+<?php else: header("Location: index.html"); endif;?>
