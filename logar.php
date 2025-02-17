@@ -17,7 +17,7 @@ if(isset($_POST['cpf']) && !empty($_POST['cpf']) && isset($_POST['senha']) && !e
         } 
     } 
 
-    $_SESSION['erro_login'] = "CPF ou senha incorretos!";
+    $_SESSION['erro_login'] = "CPF ou Senha incorretos!";
     header("Location: login.php");
     exit;
 
