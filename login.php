@@ -24,7 +24,7 @@
 
     <main>
         <div class="login-container">
-            <h2 id="login">Login</h2>
+            <h2 id="login">LOGIN</h2>
             <?php
             session_start();
             if(isset($_SESSION['erro_login'])) {

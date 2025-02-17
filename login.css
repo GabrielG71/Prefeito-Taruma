@@ -179,14 +179,18 @@ li {
 
 .login-container {
     max-width: 400px;
-    margin: 50px auto;
+    margin: 50px;
+    border: #2cf8ff 1px solid;
+    height: 310px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
-
+.login-container label{
+    font-family: Arial, Helvetica, sans-serif;
+}
 #login {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -244,7 +248,8 @@ li {
 main {
     display: flex;
     justify-content: center;
-    align-items: center;
+    
+    
     min-height: calc(100vh - 150px);
 }
 
