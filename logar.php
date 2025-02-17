@@ -13,15 +13,17 @@ if(isset($_POST['cpf']) && !empty($_POST['cpf']) && isset($_POST['senha']) && !e
     if($u->login($cpf, $senha) == true){
         if(isset($_SESSION['idu'])){    
             header("Location: menu.php");
-        } else {
-            header("Location: login.php");
-        }
-    } else {
-        header("Location: login.php");
-    }
+            exit;
+        } 
+    } 
+
+    $_SESSION['erro_login'] = "CPF ou Senha incorretos!";
+    header("Location: login.php");
+    exit;
 
 } else {
+    $_SESSION['erro_login'] = "Preencha todos os campos!";
     header("Location: login.php");
+    exit;
 }
-
 ?>

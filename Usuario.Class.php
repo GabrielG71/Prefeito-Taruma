@@ -1,6 +1,4 @@
 <?php 
-session_start();
-
 class Usuario{
 
     public function login($cpf, $senha){
@@ -23,5 +21,23 @@ class Usuario{
            return false; 
         }
         }
+        public function logged($id){
+            global $pdo;
+
+            $array = array();
+
+            $sql = "SELECT nome FROM usuarios WHERE iduser =:iduser";
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue("iduser", $id);
+            $sql->execute();
+
+            if($sql->rowCount() > 0) {
+                $array = $sql->fetch();
+            }
+
+            return $array;
+
+        }
+
     }
 ?>
