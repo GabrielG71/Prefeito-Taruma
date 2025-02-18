@@ -236,21 +236,20 @@ li {
     display: block;
     text-align: center;
     margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #00b6bd;
     text-decoration: none;
 }
 
-.link-esqueci-senha:hover {
-    text-decoration: underline;
-}
+
 
 main {
     display: flex;
     justify-content: center;
     
     
-    min-height: calc(100vh - 150px);
+    height: auto;
 }
 
 .footer {
