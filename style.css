@@ -171,13 +171,16 @@ section.slider{
 }
 .text {
     margin-top: 50px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
     height: auto;
 }
 .text p{
     font-family: Arial, Helvetica, sans-serif;
     width: auto;
+    text-indent: 2em;
+    line-height: 1.7;
+    font-size: 16px;
 }
 .text h1{
     font-family: Arial, Helvetica, sans-serif;
