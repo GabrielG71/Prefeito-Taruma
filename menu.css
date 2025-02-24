@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-@font-face {
-    font-family: Organetto;
-    src: url(Fontes/Fontspring-DEMO-organetto-ultracndultrabold.otf)
-  }
-
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +7,6 @@
 }
 
 a {
-    font-family: Organetto;
     text-decoration: none;
 }
 
@@ -35,6 +29,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .prefeitura {

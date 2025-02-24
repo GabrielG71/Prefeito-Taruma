@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'verifica.php';
 
 if(isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
@@ -23,6 +22,7 @@ if(isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
             <button class="hamburguer"></button>
             <ul class="nav-list">
                 <li><a href="logout.php">DESLOGAR</a></li>
+                <li><a href="#"><?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Usuário'; ?></a></li>
             </ul>   
         </nav>
     </header>
