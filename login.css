@@ -12,7 +12,6 @@
 }
 
 a {
-    font-family: Organetto;
     text-decoration: none;
 }
 
@@ -20,68 +19,97 @@ a {
     outline: none;
 }
 
-header {
-    background-color: #00b6bd;
-    padding-inline: 16px;
-    height: 150px;
-    display: flex;
-    align-items: center;
+.container1{
+    
+    background-image: linear-gradient(to right,#00b6bd, #2cf8ff );
+    width: 100vw;
 }
-
-.nav {
-    max-width: 1800px;
-    width: 100%;
-    margin-inline: auto;
+.container-box{
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
+    width: 100vw;
 }
-
-.prefeitura {
+.prefeitura-img{
     display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    justify-content: flex-start;
 
-#logo_prefeitura img {
-    width: 120px;
-    height: auto;
 }
-
-#marca_prefeitura img {
+.image-container {
     width: 150px;
-    height: auto;
+    height: 150px;
+    overflow: hidden;
+    margin: 10px;
+    padding: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.marca-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     filter: invert(1) brightness(2);
 }
-
-.nav-list {
+.nav-list{
     display: flex;
-    gap: 32px;
-    list-style: none;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 20px;
+}
+.nav-list li{
+    margin-top: 10px;
+    margin-right: 20px;
 }
 
 .nav-list a {
-    font-size: 35px;
-    color: white;
-    padding-block: 16px;
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
 }
 
-.nav-list a:hover{
-    color: aquamarine;
-    transition: 1s;
+
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px; 
+    width: 0;
+    height: 2px;
+    background-color: yellow;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+
+.nav-list a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .hamburguer {
+    display: flex;
     display: none;
+    justify-content: center;
+    align-items: center;
     border: none;
     background: none;
     border-top: 3px solid white;
     cursor: pointer;
+    margin-top: 20px;
+    height: 20px;
 }
 
 .hamburguer::before,
 .hamburguer::after {
-    content: "";
+    content: " ";
     display: block;
     width: 30px;
     height: 3px;
@@ -96,26 +124,13 @@ li {
 }
 
 @media (max-width: 750px) {
-    header {
-        height: 200px;
+    
+    .container-box{
+        display: flex;
+        align-items: center;
     }
+    
 
-    .nav {
-        justify-content: space-between;
-        padding-inline: 12px;
-    }
-
-    .prefeitura {
-        gap: 5px;
-    }
-
-    #logo_prefeitura img {
-        width: 150px;
-    }
-
-    #marca_prefeitura img {
-        width: 150px;
-    }
 
     .hamburguer {
         display: block;
@@ -140,25 +155,23 @@ li {
         pointer-events: none;
     }
 
-    .nav.active .nav-list {
+    .container-box.active .nav-list {
         clip-path: circle(1500px at 90% -15%);
         pointer-events: all;
     }
 
-    .nav.active .hamburguer {
-        position: fixed;
-        top: 26px;
-        right: 16px;
+    .container-box.active .hamburguer {
+        margin-right: 20px;
         border-top-color: transparent;
         padding-top: 20px;
         padding-left: 20px;
     }
 
-    .nav.active .hamburguer::before {
+    .container-box.active .hamburguer::before {
         transform: rotate(135deg);
     }
 
-    .nav.active .hamburguer::after {
+    .container-box.active .hamburguer::after {
         transform: rotate(-135deg);
         top: -7px;
     }
@@ -166,17 +179,21 @@ li {
 
 .login-container {
     max-width: 400px;
-    margin: 50px auto;
+    margin: 50px;
+    border: #2cf8ff 1px solid;
+    height: 310px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
-
+.login-container label{
+    font-family: Arial, Helvetica, sans-serif;
+}
 #login {
     text-align: center;
-    font-family: Organetto;
+    font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
 }
 
@@ -219,20 +236,20 @@ li {
     display: block;
     text-align: center;
     margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #00b6bd;
     text-decoration: none;
 }
 
-.link-esqueci-senha:hover {
-    text-decoration: underline;
-}
+
 
 main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 150px);
+    
+    
+    height: auto;
 }
 
 .footer {
