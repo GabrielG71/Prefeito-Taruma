@@ -22,7 +22,10 @@ if(isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
             <button class="hamburguer"></button>
             <ul class="nav-list">
                 <li><a href="logout.php">DESLOGAR</a></li>
-                <li><a href="#"><?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Usuário'; ?></a></li>
+                <li><a href="#">
+                    <img src="Imagens/user.png" alt="User Logo" id="user_logo">
+                    <?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Usuário'; ?></a>
+                </li>
             </ul>   
         </nav>
     </header>
