@@ -1,0 +1,7 @@
+<Files "cadastro.php">
+    Require local
+</Files>
+
+<Files "cadastrar.php">
+    Require local
+</Files>

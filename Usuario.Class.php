@@ -4,22 +4,25 @@ class Usuario {
     public function login($cpf, $senha) {
         global $pdo;
 
-        $sql = "SELECT * FROM usuarios WHERE cpf = :cpf and pass = :senha";
+        // Buscar apenas a senha hash armazenada no banco
+        $sql = "SELECT iduser, admin, pass FROM usuarios WHERE cpf = :cpf";
         $sql = $pdo->prepare($sql);
         $sql->bindValue(':cpf', $cpf);
-        $sql->bindValue(':senha', $senha);
-
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
             $dado = $sql->fetch();
-            $_SESSION['idu'] = $dado['iduser'];
-            $_SESSION['admin'] = $dado['admin'];
-            return true;
+
+            // Verifica a senha digitada com a senha armazenada no banco
+            if (password_verify($senha, $dado['pass'])) {
+                $_SESSION['idu'] = $dado['iduser'];
+                $_SESSION['admin'] = $dado['admin'];
+                return true;
+            }
         }
+
         return false;
     }
-
 
     public function logged($id) {
         global $pdo;
@@ -37,5 +40,5 @@ class Usuario {
 
         return $array;
     }
-
 }
+?>
