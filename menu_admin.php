@@ -2,7 +2,7 @@
 require 'verifica.php';
 
 if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
-    $sql = "SELECT iduser, nome FROM usuarios";
+    $sql = "SELECT iduser, nome FROM usuarios WHERE admin = 0";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
