@@ -20,7 +20,6 @@ class Usuario {
         return false;
     }
 
-    // Removido o fechamento extra de chave aqui
 
     public function logged($id) {
         global $pdo;
@@ -39,4 +38,4 @@ class Usuario {
         return $array;
     }
 
-} // Fechamento correto da classe
+}
