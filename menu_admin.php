@@ -35,8 +35,9 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
     </header>
     <main class="main-content">
     <h1>Admin</h1>
-        <h2>Lista de Presença</h2>
-        <table border="1">
+    <form action="presenca.php" method="post">
+    <h2>Lista de Presença</h2>
+        <table>
             <tr>
                 <th>Nome</th>
                 <th>Presença</th>
@@ -45,13 +46,22 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
                 <?php foreach ($usuarios as $usuario): ?>
                     <tr>
                         <td><?= htmlspecialchars($usuario['nome']) ?></td>
-                        <td><input type="checkbox"></td>
+                        <td>
+                            <input type="checkbox" name="presenca[<?= $usuario['iduser'] ?>]" value="1">
+                            <input type="hidden" name="nomes[<?= $usuario['iduser'] ?>]" value="<?= htmlspecialchars($usuario['nome']) ?>">
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr><td colspan="2">Nenhum usuário cadastrado</td></tr>
             <?php endif; ?>
         </table>
+
+        <label for="data_presenca">Data:</label>
+        <input type="date" id="data_presenca" name="data_presenca" required>
+
+        <button type="submit">Enviar</button>
+    </form>
     </main>    
     <footer class="footer">
         <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
