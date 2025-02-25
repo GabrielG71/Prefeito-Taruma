@@ -10,12 +10,16 @@ if(isset($_POST['cpf']) && !empty($_POST['cpf']) && isset($_POST['senha']) && !e
     $cpf = addslashes($_POST['cpf']);
     $senha = addslashes($_POST['senha']);
 
-    if($u->login($cpf, $senha) == true){
-        if(isset($_SESSION['idu'])){    
-            header("Location: menu.php");
+    if ($u->login($cpf, $senha) == true) {
+        if (isset($_SESSION['idu'])) {    
+            if ($_SESSION['admin'] == 1) {
+                header("Location: menu_admin.php");
+            } else {
+                header("Location: menu.php");
+            }
             exit;
         } 
-    } 
+    }
 
     $_SESSION['erro_login'] = "CPF ou Senha incorretos!";
     header("Location: login.php");

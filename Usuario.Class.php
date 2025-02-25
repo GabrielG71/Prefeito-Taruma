@@ -1,7 +1,7 @@
 <?php 
-class Usuario{
+class Usuario {
 
-    public function login($cpf, $senha){
+    public function login($cpf, $senha) {
         global $pdo;
 
         $sql = "SELECT * FROM usuarios WHERE cpf = :cpf and pass = :senha";
@@ -11,33 +11,32 @@ class Usuario{
 
         $sql->execute();
 
-        if($sql->rowCount() > 0){
+        if ($sql->rowCount() > 0) {
             $dado = $sql->fetch();
-
             $_SESSION['idu'] = $dado['iduser'];
-
+            $_SESSION['admin'] = $dado['admin'];
             return true;
-        }else{
-           return false; 
         }
-        }
-        public function logged($id){
-            global $pdo;
-
-            $array = array();
-
-            $sql = "SELECT nome FROM usuarios WHERE iduser =:iduser";
-            $sql = $pdo->prepare($sql);
-            $sql->bindValue("iduser", $id);
-            $sql->execute();
-
-            if($sql->rowCount() > 0) {
-                $array = $sql->fetch();
-            }
-
-            return $array;
-
-        }
-
+        return false;
     }
-?>
+
+    // Removido o fechamento extra de chave aqui
+
+    public function logged($id) {
+        global $pdo;
+
+        $array = array();
+
+        $sql = "SELECT nome FROM usuarios WHERE iduser = :iduser";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":iduser", $id);
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetch();
+        }
+
+        return $array;
+    }
+
+} // Fechamento correto da classe
