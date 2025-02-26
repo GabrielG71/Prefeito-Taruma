@@ -139,7 +139,7 @@ td, th{
     font-weight: bold;
 }
 tr:nth-child(odd) {
-    background-color: #e0e0e0; /* Cor para linhas ímpares */
+    background-color: #eeeeee; /* Cor para linhas ímpares */
 }
 
 tr:nth-child(even) {
