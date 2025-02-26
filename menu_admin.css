@@ -115,50 +115,66 @@ main {
 h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;
-    color: #333;
+    color: black;
     margin-bottom: 20px;
 }
 
-table {
+table{
+    
+    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
-    max-width: 750px;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    margin-bottom: 20px;
+    border: solid 1px #04f7ff;
+    box-shadow: 0px 0px 20px #04f7ff59;
+    border-collapse: separate;
+    border-spacing: 0;
     border-radius: 8px;
     overflow: hidden;
 }
 
-thead {
-    background-color: #00b6bd;
-    color: white;
-    font-size: 18px;
+td, th{
+    padding: 10px;
+    font-size: 16px ;
     font-weight: bold;
 }
+tr:nth-child(odd) {
+    background-color: #e0e0e0; /* Cor para linhas ímpares */
+}
 
-th, td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+tr:nth-child(even) {
+    background-color: #ffffff; /* Cor para linhas pares */
+}
+.btn_env{
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    color: #04f7ff;
     font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #04f7ff;
 }
-
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+.btn_env:hover{
+    background-color: #04f7ff;
+    color: white;
+    transition: 0.5s;
 }
-
 @media (max-width: 750px) {
     table {
-        width: 95%;
+        width: 100%;
     }
     th, td {
         padding: 10px;
-        font-size: 14px;
+        font-size: 16px;
     }
     header {
         height: 200px;
     }
-
+    .btn_env{
+        margin-right: 10px;
+    }
     .nav {
         justify-content: space-between;
         padding-inline: 12px;

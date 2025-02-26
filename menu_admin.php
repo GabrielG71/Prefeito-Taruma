@@ -13,7 +13,7 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prefeitura Tarumã</title>
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="menu_admin.css">
     <script defer src="app_menu.js"></script>
 </head>
 <body>
@@ -34,7 +34,7 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
         </nav>
     </header>
     <main class="main-content">
-    <h1>Admin</h1>
+    
     <form action="presenca.php" method="post">
     <h2>Lista de Presença</h2>
         <table>
@@ -57,10 +57,7 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
             <?php endif; ?>
         </table>
 
-        <label for="data_presenca">Data:</label>
-        <input type="date" id="data_presenca" name="data_presenca" required>
-
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn_env">Enviar</button>
     </form>
     </main>    
     <footer class="footer">
