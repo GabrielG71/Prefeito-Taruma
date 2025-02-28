@@ -37,6 +37,17 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
     
     <form action="presenca.php" method="post">
     <h2>Lista de Presença</h2>
+        <h3><?php 
+        $data = new IntlDateFormatter(
+            'pt_BR', 
+            IntlDateFormatter::FULL, 
+            IntlDateFormatter::NONE,
+            'America/Sao_Paulo',
+            IntlDateFormatter::GREGORIAN,
+            "EEEE, d 'de' MMMM 'de' yyyy"
+        );
+        echo $data->format(new DateTime());
+        ?></h3>
         <table>
             <tr>
                 <th>Nome</th>
