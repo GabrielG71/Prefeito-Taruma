@@ -6,6 +6,13 @@ if (!isset($_SESSION['idu']) || empty($_SESSION['idu'])) {
     exit;
 }
 
+$sql = "SELECT DISTINCT data FROM presencas ORDER BY data DESC";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$datas_disponiveis = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+$dataSelecionada = $_GET['data'] ?? ($datas_disponiveis[0] ?? date('Y-m-d'));
+
 $sql = "SELECT u.nome, SUM(p.presencas) AS total_presencas, SUM(p.faltas) AS total_faltas 
         FROM usuarios u
         LEFT JOIN presencas p ON u.iduser = p.iduser
@@ -15,6 +22,15 @@ $sql = "SELECT u.nome, SUM(p.presencas) AS total_presencas, SUM(p.faltas) AS tot
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $presencas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$sql = "SELECT p.id, u.nome, p.presencas, p.faltas 
+        FROM presencas p
+        JOIN usuarios u ON p.iduser = u.iduser
+        WHERE u.admin = 0 AND p.data = :data
+        ORDER BY u.nome";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([':data' => $dataSelecionada]);
+$registros_diarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +40,6 @@ $presencas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presenças</title>
     <link rel="stylesheet" href="menu_presencas.css">
-    <script defer src="app_menu.js"></script>
 </head>
 <body>
     <header class="header">
@@ -42,7 +57,7 @@ $presencas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </li>
             </ul>   
         </nav>
-    </header>
+    </header>   
     <main>
         <h1>Presenças Total</h1>
         <table>
@@ -59,6 +74,48 @@ $presencas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             <?php endforeach; ?>
         </table>
+        <header>
+            <h1>Registros Diários</h1>
+        </header>
+        <form method="GET" action="menu_presencas.php">
+            <label for="data">Escolha a Data:</label>
+            <select name="data" id="data">
+                <?php foreach ($datas_disponiveis as $data): ?>
+                    <option value="<?= $data ?>" <?= ($data == $dataSelecionada) ? 'selected' : '' ?>>
+                        <?= date("d/m/Y", strtotime($data)) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit">Filtrar</button>
+        </form>
+        <form action="atualiza_presenca.php" method="post">
+            <input type="hidden" name="data" value="<?= htmlspecialchars($dataSelecionada) ?>">
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Presenças</th>
+                    <th>Faltas</th>
+                </tr>
+                <?php if (!empty($registros_diarios)): ?>
+                    <?php foreach ($registros_diarios as $registro): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($registro['nome']) ?></td>
+                            <td>
+                                <input type="number" name="presencas[<?= $registro['id'] ?>]" value="<?= $registro['presencas'] ?>" min="0">
+                            </td>
+                            <td>
+                                <input type="number" name="faltas[<?= $registro['id'] ?>]" value="<?= $registro['faltas'] ?>" min="0">
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="3">Nenhum registro encontrado para essa data.</td>
+                    </tr>
+                <?php endif; ?>
+            </table>
+            <button type="submit">Salvar</button>
+        </form>
     </main>
     <footer class="footer">
         <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
