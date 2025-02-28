@@ -70,6 +70,9 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
 
         <button type="submit" class="btn_env">Enviar</button>
     </form>
+    <div class="total_presenca">
+        <a href="menu_presencas.php">Ver as presenças</a>
+    </div>
     </main>    
     <footer class="footer">
         <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
