@@ -116,6 +116,9 @@ $registros_diarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </table>
             <button type="submit">Salvar</button>
         </form>
+        <div class="voltar_presenca">
+            <a href="menu_admin.php">Voltar para a presença</a>
+        </div>
     </main>
     <footer class="footer">
         <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
