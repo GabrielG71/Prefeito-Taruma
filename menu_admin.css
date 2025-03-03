@@ -302,20 +302,24 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 main {
     flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
     margin: 0px 60px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
 }
 
 footer {
     background-image: linear-gradient(to right,#00b6bd, #2cf8ff );
-    padding: 10px 0;
+    padding: 20px 0;
     width: 100vw;
     text-align: center;
+    color: white;
 }
-
 
 
 #presença{
@@ -332,7 +336,7 @@ h2{
 }
 #footer-p{
     margin-bottom: 0px;
-    
+
 }
 
 #btn_salve{

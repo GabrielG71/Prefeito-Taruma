@@ -45,7 +45,7 @@ if(isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
         </nav>
     </header>
     <main class="main-content">
-        <h1>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</h1>
+        <h1 id="h1s">Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</h1>
 
         <h2>Suas Presenças</h2>
         <table  class="table table-striped" id="presença">
@@ -63,7 +63,7 @@ if(isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
             </tbody>
         </table>
 
-        <h2>Local de Embarque e Desembarque</h2>
+        
         <table class="table table-striped" id="presença">
             <thead>
                 <tr>
