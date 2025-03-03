@@ -72,8 +72,8 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
             </tbody>
         </table>
 
-        <button type="submit" class="btn btn-outline-primary">Enviar</button>
-        <a href="menu_presencas.php" class="btn btn-outline-primary">Ver as presenças</a>
+        <button type="submit" class="btn btn-outline-primary" id="btn_salve">Enviar</button>
+        <a href="menu_presencas.php" class="btn btn-outline-primary" id="btn_salve">Ver as presenças</a>
     </form>
     
         
