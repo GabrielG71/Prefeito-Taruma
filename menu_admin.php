@@ -13,21 +13,21 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prefeitura Tarumã</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="menu_admin.css">
     <script defer src="app_menu.js"></script>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="prefeitura">
-                <a href="#" id="logo_prefeitura"><li><img src="Imagens/logo-tarumã.png" alt=""></li></a>
-                <a href="#" id="marca_prefeitura"><li><img src="Imagens/marca_prefeitura.png" alt=""></li></a>
+<header class="container1">
+        <nav class="container-box">
+            <div class="prefeitura-img">
+                <div class="image-container"><a href="#" id="logo_prefeitura"><img src="Imagens/logo-tarumã.png" alt=""></a></div>
+                <div class="marca-container"><a href="#" id="marca_prefeitura"><img src="Imagens/marca_prefeitura.png" alt=""></a></div>
             </div>
             <button class="hamburguer"></button>
             <ul class="nav-list">
                 <li><a href="logout.php">DESLOGAR</a></li>
                 <li><a href="#">
-                    <img src="Imagens/user.png" alt="User Logo" id="user_logo">
                     <?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Usuário'; ?></a>
                 </li>
             </ul>   
@@ -48,31 +48,36 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
         );
         echo $data->format(new DateTime());
         ?></h3>
-        <table>
-            <tr>
-                <th>Nome</th>
-                <th>Presença</th>
-            </tr>
-            <?php if (!empty($usuarios)): ?>
-                <?php foreach ($usuarios as $usuario): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($usuario['nome']) ?></td>
-                        <td>
-                            <input type="checkbox" name="presenca[<?= $usuario['iduser'] ?>]" value="1">
-                            <input type="hidden" name="nomes[<?= $usuario['iduser'] ?>]" value="<?= htmlspecialchars($usuario['nome']) ?>">
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr><td colspan="2">Nenhum usuário cadastrado</td></tr>
-            <?php endif; ?>
+        <table class="table table-striped table-hover" id="presença">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Presença</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($usuarios)): ?>
+                    <?php foreach ($usuarios as $usuario): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($usuario['nome']) ?></td>
+                            <td>
+                                <input type="checkbox" name="presenca[<?= $usuario['iduser'] ?>]" value="1" class="form-check-input mt-0">
+                                <input type="hidden" name="nomes[<?= $usuario['iduser'] ?>]" value="<?= htmlspecialchars($usuario['nome']) ?>">
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr><td colspan="2">Nenhum usuário cadastrado</td></tr>
+                <?php endif; ?>
+            </tbody>
         </table>
 
-        <button type="submit" class="btn_env">Enviar</button>
+        <button type="submit" class="btn btn-outline-primary">Enviar</button>
+        <a href="menu_presencas.php" class="btn btn-outline-primary">Ver as presenças</a>
     </form>
-    <div class="total_presenca">
-        <a href="menu_presencas.php">Ver as presenças</a>
-    </div>
+    
+        
+   
     </main>    
     <footer class="footer">
         <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>

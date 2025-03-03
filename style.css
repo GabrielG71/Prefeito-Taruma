@@ -23,7 +23,7 @@ a {
 .container1{
     
     background-image: linear-gradient(to right,#00b6bd, #2cf8ff );
-    width: 99vw;
+    width: 100vw;
 }
 .container-box{
     display: flex;
