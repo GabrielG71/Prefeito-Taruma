@@ -23,7 +23,7 @@ a {
 .container1{
     
     background-image: linear-gradient(to right,#00b6bd, #2cf8ff );
-    width: 100vw;
+    width: 99vw;
 }
 .container-box{
     display: flex;
@@ -312,4 +312,20 @@ body {
     
     width: 100%;
     margin-top: 20px;
+}
+.main-content{
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    
+}
+
+
+#presença{
+    width: 50%;
+    align-self: center;
+    margin-top: 20px;
+}
+h2{
+    align-self: center;
 }
