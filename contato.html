@@ -12,7 +12,6 @@
         <nav class="container-box">
             <div class="prefeitura-img">
                 <div class="image-container"><a href="#" id="logo_prefeitura"><img src="Imagens/logo-tarumã.png" alt=""></a></div>
-                <div class="marca-container"><a href="#" id="marca_prefeitura"><img src="Imagens/marca_prefeitura.png" alt=""></a></div>
             </div>
             <button class="hamburguer"></button>
             <ul class="nav-list">
