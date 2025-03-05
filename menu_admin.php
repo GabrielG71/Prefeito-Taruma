@@ -74,12 +74,27 @@ if (isset($_SESSION['idu']) && !empty($_SESSION['idu'])):
         <button type="submit" class="btn btn-outline-primary" id="btn_salve">Enviar</button>
         <a href="menu_presencas.php" class="btn btn-outline-primary" id="btn_salve">Ver as presenças</a>
     </form>
-    
-        
-   
     </main>    
     <footer class="footer">
-        <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
+        <div class="container">
+            <div class="col">
+                <h5>AETA</h5>
+                <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
+                <p>CNPJ: 03.148.712/0001-40</p>
+            </div>
+            <div class="col">
+                <h5>Contato</h5>
+                <p>&#128231; E-mail: aetataruma@gmail.com</p>
+                <p>&#128205; Rua Jasmin 296, Centro - Tarumã</p>
+                <p>&#128222; (18) 99646-4673</p>
+            </div>
+            <div class="col footer-links">
+                <h5>Navegação</h5>
+                <a href="index.html">Home</a>
+                <a href="contato.html">Contato</a>
+                <a href="login.php">Login</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
