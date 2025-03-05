@@ -78,9 +78,7 @@ $registros_diarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <header>
             <h1>Registros Diários</h1>
-        </header>
         <form method="GET" action="menu_presencas.php">
             <label for="data" id="label">Escolha a Data:</label>
             <select name="data" id="data" class="form-select">
