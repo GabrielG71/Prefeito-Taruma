@@ -210,18 +210,57 @@ main {
     flex-flow: column wrap;
 }
 
-footer {
-    background-image: linear-gradient(to right,#00b6bd, #2cf8ff );
-    padding: 20px 0;
-    width: 100vw;
-    text-align: center;
+.footer {
+    background-color: #00b6bd;
     color: white;
-    
-}
-footer p {
+    text-align: center;
+    padding: 30px 20px;
     font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    position: relative; /* Alterado de fixed para relative */
+    bottom: 0;
 }
 
+.footer .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Garante que as colunas se ajustem em telas menores */
+    gap: 20px;
+}
+
+.footer .col {
+    flex: 1;
+    min-width: 250px; /* Evita que as colunas fiquem muito pequenas */
+}
+
+.footer h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer-links a {
+    font-size: 14px;
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+body{
+    overflow-x: hidden;
+}
 
 form {
     margin-top: 20px;
