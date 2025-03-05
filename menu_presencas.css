@@ -326,7 +326,7 @@ footer {
 
 #presença{
     width: 70%;
-    align-self: center;
+    align-self: flex-start;
     margin-left: 20px;
 }
 h1{

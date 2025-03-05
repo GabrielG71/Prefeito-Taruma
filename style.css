@@ -360,3 +360,8 @@ body {
 h2{
     align-self: center;
 }
+
+#btn_pdf{
+    text-align: center;
+    margin-bottom: 20px;
+}
