@@ -178,11 +178,12 @@ li {
 }
 
 .login-container {
-    max-width: 400px;
+    max-width: 500px;
     margin: 50px;
     border: #2cf8ff 1px solid;
-    height: 310px;
-    padding: 20px;
+    height: 350px;
+    padding-right: 20px;
+    padding-left: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -195,6 +196,7 @@ li {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .input-group {
@@ -256,10 +258,49 @@ main {
     background-color: #00b6bd;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     font-family: Arial, Helvetica, sans-serif;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
+    position: relative; /* Alterado de fixed para relative */
+    bottom: 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Garante que as colunas se ajustem em telas menores */
+    gap: 20px;
+}
+
+.footer .col {
+    flex: 1;
+    min-width: 250px; /* Evita que as colunas fiquem muito pequenas */
+}
+
+.footer h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer-links a {
+    font-size: 14px;
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+body{
+    overflow-x: hidden;
 }

@@ -307,19 +307,23 @@ body {
     background-color: #00b6bd;
     color: white;
     text-align: center;
-    height: 300px; /* Definir altura fixa */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px; /* Ajusta o espaçamento interno */
+    padding: 30px 20px;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
+    position: relative; /* Alterado de fixed para relative */
+    bottom: 0;
 }
 
 .footer .container {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Evita quebra errada em telas pequenas */
+    flex-wrap: wrap; /* Garante que as colunas se ajustem em telas menores */
+    gap: 20px;
+}
+
+.footer .col {
+    flex: 1;
+    min-width: 250px; /* Evita que as colunas fiquem muito pequenas */
 }
 
 .footer h5 {
@@ -327,20 +331,22 @@ body {
     margin-bottom: 10px;
 }
 
-.footer p {
+.footer p, .footer-links a {
     font-size: 14px;
     margin: 5px 0;
-}
-
-.footer-links a {
-    display: block;
     color: white;
     text-decoration: none;
-    font-size: 14px;
-    margin-bottom: 5px;
 }
 
 .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
     text-decoration: underline;
 }
 

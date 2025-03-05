@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="login.css">
     <script defer src="app_login.js"></script>
 </head>
@@ -47,7 +48,25 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
+        <div class="container">
+            <div class="col">
+                <h5>AETA</h5>
+                <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
+                <p>CNPJ: 03.148.712/0001-40</p>
+            </div>
+            <div class="col">
+                <h5>Contato</h5>
+                <p>&#128231; E-mail: aetataruma@gmail.com</p>
+                <p>&#128205; Rua Jasmin 296, Centro - Tarumã</p>
+                <p>&#128222; (18) 99646-4673</p>
+            </div>
+            <div class="col footer-links">
+                <h5>Navegação</h5>
+                <a href="index.html">Home</a>
+                <a href="contato.html">Contato</a>
+                <a href="login.php">Login</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
