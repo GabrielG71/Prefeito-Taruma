@@ -313,17 +313,46 @@ main {
     flex-flow: column wrap;
 }
 
-footer {
-    background-image: linear-gradient(to right,#00b6bd, #2cf8ff );
-    padding: 20px 0;
-    width: 100vw;
-    text-align: center;
+.footer {
+    background-color: #00b6bd;
     color: white;
+    text-align: center;
+    height: 150px; /* Definir altura fixa */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; /* Ajusta o espaçamento interno */
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
 }
 
+.footer .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Evita quebra errada em telas pequenas */
+}
 
+.footer h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
 
+.footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
 
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
 
 #presença{
     width: 50%;
