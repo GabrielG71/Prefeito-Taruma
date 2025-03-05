@@ -253,7 +253,18 @@ main {
     
     height: auto;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
 
+/* Ajusta o conteúdo para ocupar o espaço disponível */
+main{
+    flex: 1; /* Faz com que o conteúdo empurre o footer para o final */
+}
 .footer {
     background-color: #00b6bd;
     color: white;
@@ -261,8 +272,6 @@ main {
     padding: 30px 20px;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
-    position: relative; /* Alterado de fixed para relative */
-    bottom: 0;
 }
 
 .footer .container {
