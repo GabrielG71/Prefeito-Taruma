@@ -41,7 +41,7 @@
                     <label for="senha">Senha:</label>
                     <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                 </div>
-                <button type="submit" class="btn-login">Logar</button>
+                <button type="submit" class="btn btn-outline-info btn-login">Logar</button>
                 <a href="#" class="link-esqueci-senha">Esqueceu a senha?</a>
             </form>
         </div>

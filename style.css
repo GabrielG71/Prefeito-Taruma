@@ -370,3 +370,6 @@ h2{
     text-align: center;
     margin-bottom: 20px;
 }
+#btn-pdf:hover{
+    transition: 0.5s;
+}
