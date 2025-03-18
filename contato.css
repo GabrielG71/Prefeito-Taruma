@@ -22,7 +22,7 @@ a {
 
 .container1{
     
-    background-image: linear-gradient(to right,#00b6bd, #2cf8ff );
+    background-image: linear-gradient(to right,#128bdb,#0465a4 );
     width: 100vw;
 }
 .container-box{
@@ -144,7 +144,7 @@ li {
         height: 100vh;
         clip-path: circle(100px at 90% -25%);
         transition: 0.4s ease-out;
-        background: #00b6bd;
+        background: #128bdb;
         justify-content: center;
         align-items: center;
         z-index: 2;
@@ -211,7 +211,7 @@ main {
 }
 
 .footer {
-    background-color: #00b6bd;
+    background-color: #128bdb;
     color: white;
     text-align: center;
     padding: 30px 20px;
@@ -270,7 +270,7 @@ form {
     flex-direction: column;
     width: 90%;
     max-width: 400px;
-    border: #00b6bd solid 1px;
+    border: #128bdb solid 1px;
     
     padding: 20px;
     border-radius: 8px;
@@ -282,7 +282,7 @@ form textarea,
 form button {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #128bdb;
     border-radius: 4px;
     font-size: 16px;
     margin-bottom: 15px;
@@ -295,15 +295,17 @@ textarea {
 }
 
 button {
-    background-color: #00b6bd;
-    color: white;
-    border: none;
+    background-color: white;
+    color: #128bdb;
+    border: solid 1px #128bdb;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    
+
 }
 .Env:hover{
-    background-color: #2cf8ff;
+    color: white;
+    background-color: #128bdb;
     transition: 0.5s;
 }
 

@@ -21,7 +21,7 @@ a {
 
 .container1{
     
-    background-image: linear-gradient(to right,#00b6bd, #2cf8ff );
+    background-image: linear-gradient(to right,#128bdb,#0465a4 );
     width: 100vw;
 }
 .container-box{
@@ -149,7 +149,7 @@ li {
         height: 100vh;
         clip-path: circle(100px at 90% -25%);
         transition: 0.4s ease-out;
-        background: #00b6bd;
+        background: #128bdb;
         justify-content: center;
         z-index: 2;
         pointer-events: none;
@@ -180,7 +180,7 @@ li {
 .login-container {
     max-width: 500px;
     margin: 50px;
-    border: #2cf8ff 1px solid;
+    border: #128bdb 1px solid;
     height: 350px;
     padding-right: 20px;
     padding-left: 20px;
@@ -223,8 +223,8 @@ li {
     width: 100%;
     padding: 12px;
     
-    
-    
+    border-color: #128bdb;
+    color: #128bdb;
     font-size: 16px;
     cursor: pointer;
     
@@ -233,6 +233,7 @@ li {
 .btn-login:hover {
     transition: 0.5s;
     color: white;
+    background-color: #128bdb;
 }
 
 .link-esqueci-senha {
@@ -241,7 +242,7 @@ li {
     margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    color: #00b6bd;
+    color: #128bdb;
     text-decoration: none;
 }
 
@@ -267,7 +268,7 @@ main{
     flex: 1; /* Faz com que o conteúdo empurre o footer para o final */
 }
 .footer {
-    background-color: #00b6bd;
+    background-color: #128bdb;
     color: white;
     text-align: center;
     padding: 30px 20px;
