@@ -1,16 +1,18 @@
 <?php 
-// Verifica se o usuário está logado
+// Inclui o script de verificação de login, garantindo que o usuário esteja autenticado
 require 'verifica.php';
 
-// Se o formulário foi enviado e o usuário está autenticado
+// Verifica se a requisição foi feita via POST e se há um usuário logado na sessão
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['idu'])) {
-    // Pega a data enviada ou usa a data atual como padrão
+    // Obtém a data enviada pelo formulário, ou usa a data atual se não houver valor
     $dataSelecionada = $_POST['data'] ?? date('Y-m-d');
 
-    // Atualiza os dados de presença e falta para cada registro
+    // Percorre os dados de presenças enviados no formulário
     foreach ($_POST['presencas'] as $id => $presenca) {
+        // Obtém a quantidade de faltas para o mesmo ID, ou define como 0 se não vier valor
         $falta = $_POST['faltas'][$id] ?? 0;
 
+        // Atualiza a tabela de presenças com os valores de presença e falta para o ID correspondente
         $sql = "UPDATE presencas SET presencas = :presenca, faltas = :falta WHERE id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['idu'])) {
         ]);
     }
 
-    // Atualiza os totais de presenças e faltas na tabela de usuários
+    // Atualiza a tabela de usuários com o total de presenças e faltas somadas para cada usuário
     $sql = "UPDATE usuarios u
             LEFT JOIN (
                 SELECT iduser, SUM(presencas) AS total_presencas, SUM(faltas) AS total_faltas 
@@ -30,12 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['idu'])) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    // Redireciona para o menu com a data selecionada
+    // Redireciona o usuário de volta para a página de presença, passando a data selecionada pela URL
     header("Location: menu_presencas.php?data=" . urlencode($dataSelecionada));
     exit;
 } else {
-    // Se não for POST ou não estiver logado, volta para o menu
+    // Caso não seja uma requisição POST ou o usuário não esteja logado, redireciona para o menu
     header("Location: menu_presencas.php");
     exit;
 }
 ?>
+
