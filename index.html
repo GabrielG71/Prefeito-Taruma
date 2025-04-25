@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prefeitura Tarumã</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="app_index.js"></script>
+    <!-- Configurações básicas do documento -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura viewport para responsividade -->
+    <title>Prefeitura Tarumã</title> <!-- Título da página exibido na aba do navegador -->
+    
+    <!-- Inclusão de frameworks e estilos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Framework Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Folha de estilos personalizada -->
+    <script defer src="app_index.js"></script> <!-- JavaScript com defer para carregar após o HTML -->
 </head>
 <body>
+    <!-- Cabeçalho da página -->
     <header class="container1">
         <nav class="container-box">
+            <!-- Logo da Prefeitura -->
             <div class="prefeitura-img">
-                <div class="image-container"><a href="#" id="logo_prefeitura"><img src="Imagens/logo-tarumã.png" alt=""></a></div>
+                <div class="image-container">
+                    <a href="#" id="logo_prefeitura">
+                        <img src="Imagens/logo-tarumã.png" alt="Logo da Prefeitura de Tarumã">
+                    </a>
+                </div>
             </div>
+            
+            <!-- Botão do menu hamburguer (para mobile) -->
             <button class="hamburguer"></button>
+            
+            <!-- Menu de navegação principal -->
             <ul class="nav-list">
-                <li><a href="login.php">LOGIN</a></li>
-                <li><a href="contato.html">CONTATO</a></li>
+                <li><a href="login.php">LOGIN</a></li> <!-- Link para página de login -->
+                <li><a href="contato.html">CONTATO</a></li> <!-- Link para página de contato -->
             </ul>   
         </nav>
     </header>
+
+    <!-- Conteúdo principal da página -->
     <main class="main-content">
+        <!-- Seção do slider/carrossel -->
         <section class="slider">
             <div class="slider-content">
+                <!-- Controles de rádio para slides -->
                 <input type="radio" name="btn-radio" id="radio1">
                 <input type="radio" name="btn-radio" id="radio2">
                 <input type="radio" name="btn-radio" id="radio3">
 
+                <!-- Slides -->
                 <div class="slide-box primeiro grabing">
-                    <img class="img-desktop" src="Imagens/Slide 1.png" alt="slide 1">
-                    <img class="img-mobile" src="Imagens/Slide-mob 1.png" alt="slide-1">
-                </div>
-                <div class="slide-box grabing" >
-                    <img class="img-desktop" src="Imagens/Slide 2.png" alt="slide 1">
-                    <img class="img-mobile" src="Imagens/Slide-mob 2.png" alt="slide-1">
+                    <img class="img-desktop" src="Imagens/Slide 1.png" alt="Primeiro slide - versão desktop">
+                    <img class="img-mobile" src="Imagens/Slide-mob 1.png" alt="Primeiro slide - versão mobile">
                 </div>
                 <div class="slide-box grabing">
-                    <img class="img-desktop" src="Imagens/Slide 3.png" alt="slide 1">
-                    <img class="img-mobile" src="Imagens/Slide-mob 3.png" alt="slide-1">
+                    <img class="img-desktop" src="Imagens/Slide 2.png" alt="Segundo slide - versão desktop">
+                    <img class="img-mobile" src="Imagens/Slide-mob 2.png" alt="Segundo slide - versão mobile">
+                </div>
+                <div class="slide-box grabing">
+                    <img class="img-desktop" src="Imagens/Slide 3.png" alt="Terceiro slide - versão desktop">
+                    <img class="img-mobile" src="Imagens/Slide-mob 3.png" alt="Terceiro slide - versão mobile">
                 </div>
 
+                <!-- Navegação automática -->
                 <div class="nav-auto">
                     <div class="auto-btn1"></div>
                     <div class="auto-btn2"></div>
                     <div class="auto-btn3"></div>
                 </div>
+                
+                <!-- Navegação manual -->
                 <div class="nav-manual">
                     <label for="radio1" class="manualbtn"></label>
                     <label for="radio2" class="manualbtn"></label>
@@ -53,37 +74,53 @@
                 </div>
             </div>
         </section>
+
+        <!-- Seção de texto sobre a AETA -->
         <section class="text">
             <h1>Transporte</h1>
+            <!-- Parágrafos com informações institucionais -->
             <p>A Associação de Estudantes de Tarumã (AETA), fundada em 18 de abril de 1999, é uma entidade civil de direito privado, sem fins lucrativos, com sede no município de Tarumã, Estado de São Paulo, situada na Rua Jasmim, nº 296, Centro. Com caráter permanente, a AETA tem como missão fundamental a promoção da educação, da cultura e do bem-estar dos estudantes, buscando sempre a integração social e o fortalecimento do ambiente acadêmico e comunitário.</p>
-
-                <p>A AETA dedica-se à promoção cultural, à defesa e à conservação do patrimônio histórico e artístico, além de fomentar o intercâmbio cultural entre seus associados. Com isso, a associação visa criar um ambiente de cooperação e sociabilidade, formando um verdadeiro espírito estudantil, com ênfase no desenvolvimento da prosperidade e do caráter. Em suas atividades, a AETA respeita os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e eficiência, garantindo que todos os recursos obtidos sejam integralmente aplicados na consecução de seus objetivos sociais, sem qualquer distribuição de lucros ou dividendos entre seus membros ou colaboradores.</p>
-                
-                <p>Além disso, a AETA presta serviços essenciais à comunidade estudantil, como o transporte escolar, em parceria com a Prefeitura Municipal de Tarumã. Esse serviço tem como objetivo garantir a segurança e o conforto dos estudantes, oferecendo transporte adequado, com veículos apropriados e motoristas devidamente qualificados. A associação compromete-se a zelar pela manutenção dos padrões de qualidade e segurança estabelecidos pela parceria, assegurando que os usuários que estejam em dia com suas obrigações financeiras possam usufruir dos benefícios do transporte escolar, mediante a emissão da carteirinha de sócio.</p>
-                
-                <p>O contratante, no âmbito deste serviço, compromete-se a pagar uma taxa simbólica de utilização do transporte escolar, além de uma taxa de associação no valor de R$ 50,00, acrescida das despesas administrativas. Adicionalmente, o contratante se compromete a participar das atividades de cidadania promovidas pela Secretaria Municipal de Educação, Esportes e Cultura, em colaboração com a AETA, cumprindo uma carga mínima de 40% de participação nas atividades programadas ao longo do ano. Para os contratantes que se encontram no último ano de seu curso, a participação nas atividades de cidadania será obrigatória, conforme estipulado pelo Estatuto da associação.</p>
-                
-                <p>Além dessas responsabilidades, o contratante deve observar rigorosamente as normas de convivência durante o uso do transporte escolar, mantendo comportamento adequado, respeito aos demais passageiros e ao motorista, e abstendo-se de portar substâncias ilícitas ou prejudiciais, como drogas ou bebidas alcoólicas. O não cumprimento das normas poderá resultar no pagamento de contribuições adicionais, conforme estabelecido no contrato.</p>
-                
-                <p>A estrutura administrativa da AETA é composta pelos seguintes membros da diretoria: Presidente: Otávio Sérgio Varoto, Vice-presidente: Camila Pereira Mattos da Rocha, 1º Tesoureiro: Ana Clara Mazul Viana, 2º Tesoureiro: Marcos Vinicius Mascari de Oliveira, 1º Secretário: Lucas Oliveira de Almeida, 2º Secretário: Anelize Gomes Cardoso Rocha, Presidente do Conselho Fiscal: Giovana Renzi da Silva, Secretário do Conselho Fiscal: Gabriela Soares de Oliveira, e Membro do Conselho Fiscal: João Pedro Mossini Alcides.</p>
-                
-                <p>A AETA, com base em seu Regimento Interno, aprovado pela Assembleia Geral, reafirma seu compromisso com a excelência, transparência e responsabilidade em suas ações, buscando sempre o desenvolvimento integral de seus associados e a melhoria contínua dos serviços prestados. Para quaisquer informações adicionais ou esclarecimentos, a AETA pode ser contatada pelos seguintes meios de comunicação: Endereço: Rua Jasmim, nº 296, Centro de Tarumã-SP, E-mail: aetataruma@gmail.com, Telefone: +55 18 99646-4673.</p>
+            
+            <!-- Continuação do texto institucional -->
+            <p>A AETA dedica-se à promoção cultural, à defesa e à conservação do patrimônio histórico e artístico, além de fomentar o intercâmbio cultural entre seus associados. Com isso, a associação visa criar um ambiente de cooperação e sociabilidade, formando um verdadeiro espírito estudantil, com ênfase no desenvolvimento da prosperidade e do caráter. Em suas atividades, a AETA respeita os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e eficiência, garantindo que todos os recursos obtidos sejam integralmente aplicados na consecução de seus objetivos sociais, sem qualquer distribuição de lucros ou dividendos entre seus membros ou colaboradores.</p>
+            
+            <!-- Mais parágrafos com informações detalhadas -->
+            <p>Além disso, a AETA presta serviços essenciais à comunidade estudantil, como o transporte escolar, em parceria com a Prefeitura Municipal de Tarumã. Esse serviço tem como objetivo garantir a segurança e o conforto dos estudantes, oferecendo transporte adequado, com veículos apropriados e motoristas devidamente qualificados. A associação compromete-se a zelar pela manutenção dos padrões de qualidade e segurança estabelecidos pela parceria, assegurando que os usuários que estejam em dia com suas obrigações financeiras possam usufruir dos benefícios do transporte escolar, mediante a emissão da carteirinha de sócio.</p>
+            
+            <p>O contratante, no âmbito deste serviço, compromete-se a pagar uma taxa simbólica de utilização do transporte escolar, além de uma taxa de associação no valor de R$ 50,00, acrescida das despesas administrativas. Adicionalmente, o contratante se compromete a participar das atividades de cidadania promovidas pela Secretaria Municipal de Educação, Esportes e Cultura, em colaboração com a AETA, cumprindo uma carga mínima de 40% de participação nas atividades programadas ao longo do ano. Para os contratantes que se encontram no último ano de seu curso, a participação nas atividades de cidadania será obrigatória, conforme estipulado pelo Estatuto da associação.</p>
+            
+            <p>Além dessas responsabilidades, o contratante deve observar rigorosamente as normas de convivência durante o uso do transporte escolar, mantendo comportamento adequado, respeito aos demais passageiros e ao motorista, e abstendo-se de portar substâncias ilícitas ou prejudiciais, como drogas ou bebidas alcoólicas. O não cumprimento das normas poderá resultar no pagamento de contribuições adicionais, conforme estabelecido no contrato.</p>
+            
+            <p>A estrutura administrativa da AETA é composta pelos seguintes membros da diretoria: Presidente: Otávio Sérgio Varoto, Vice-presidente: Camila Pereira Mattos da Rocha, 1º Tesoureiro: Ana Clara Mazul Viana, 2º Tesoureiro: Marcos Vinicius Mascari de Oliveira, 1º Secretário: Lucas Oliveira de Almeida, 2º Secretário: Anelize Gomes Cardoso Rocha, Presidente do Conselho Fiscal: Giovana Renzi da Silva, Secretário do Conselho Fiscal: Gabriela Soares de Oliveira, e Membro do Conselho Fiscal: João Pedro Mossini Alcides.</p>
+            
+            <p>A AETA, com base em seu Regimento Interno, aprovado pela Assembleia Geral, reafirma seu compromisso com a excelência, transparência e responsabilidade em suas ações, buscando sempre o desenvolvimento integral de seus associados e a melhoria contínua dos serviços prestados. Para quaisquer informações adicionais ou esclarecimentos, a AETA pode ser contatada pelos seguintes meios de comunicação: Endereço: Rua Jasmim, nº 296, Centro de Tarumã-SP, E-mail: aetataruma@gmail.com, Telefone: +55 18 99646-4673.</p>
         </section>
-        <a href="PDF/PDF DE EXEMPLO.pdf" id="btn_pdf"><button class="btn btn-outline-primary" id="btn-pdf" >Baixar PDF</button></a>
+
+        <!-- Botão para download de PDF -->
+        <a href="PDF/PDF DE EXEMPLO.pdf" id="btn_pdf">
+            <button class="btn btn-outline-primary" id="btn-pdf">Baixar PDF</button>
+        </a>
     </main>    
+
+    <!-- Rodapé da página -->
     <footer class="footer">
         <div class="container">
+            <!-- Coluna com informações institucionais -->
             <div class="col">
                 <h5>AETA</h5>
                 <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
                 <p>CNPJ: 03.148.712/0001-40</p>
             </div>
+            
+            <!-- Coluna com informações de contato -->
             <div class="col">
                 <h5>Contato</h5>
                 <p>&#128231; E-mail: aetataruma@gmail.com</p>
                 <p>&#128205; Rua Jasmin 296, Centro - Tarumã</p>
                 <p>&#128222; (18) 99646-4673</p>
             </div>
+            
+            <!-- Coluna com links de navegação -->
             <div class="col footer-links">
                 <h5>Navegação</h5>
                 <a href="index.html">Home</a>
