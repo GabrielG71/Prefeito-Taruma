@@ -1,21 +1,22 @@
 <?php
-// Verifica se o usuário está logado
+// Inclui arquivo que verifica se usuário está logado
 require 'verifica.php';
 
-// Verifica se os dados obrigatórios foram enviados
+// Verifica se todos campos obrigatórios foram enviados via POST
 if (isset($_POST['nome'], $_POST['cpf'], $_POST['sit'], $_POST['admin'], $_POST['local_embarque'], $_POST['local_desembarque'])) {
-    // Pega os dados do formulário
-    $id = isset($_POST['id']) ? (int)$_POST['id'] : null;
-    $nome = addslashes($_POST['nome']);
-    $cpf = addslashes($_POST['cpf']);
-    $sit = addslashes($_POST['sit']);
-    $admin = (int)$_POST['admin'];
-    $local_embarque = addslashes($_POST['local_embarque']);
-    $local_desembarque = addslashes($_POST['local_desembarque']);
+    
+    // Prepara dados do formulário:
+    $id = isset($_POST['id']) ? (int)$_POST['id'] : null;  // ID do usuário (se edição)
+    $nome = addslashes($_POST['nome']);  // Previne SQL injection básico
+    $cpf = addslashes($_POST['cpf']);    // CPF do usuário
+    $sit = addslashes($_POST['sit']);    // Situação do usuário
+    $admin = (int)$_POST['admin'];       // Nível de admin (0 ou 1)
+    $local_embarque = addslashes($_POST['local_embarque']);    // Local de embarque
+    $local_desembarque = addslashes($_POST['local_desembarque']);  // Local de desembarque
 
-    // Se tiver ID, é edição
+    // Se tiver ID, é ATUALIZAÇÃO de cadastro existente
     if ($id) {
-        // Atualiza dados do usuário
+        // Atualiza dados principais na tabela usuarios
         $sql = $pdo->prepare("UPDATE usuarios SET nome = :nome, sit = :sit, admin = :admin WHERE iduser = :id");
         $sql->bindValue(":nome", $nome);
         $sql->bindValue(":sit", $sit);
@@ -23,28 +24,31 @@ if (isset($_POST['nome'], $_POST['cpf'], $_POST['sit'], $_POST['admin'], $_POST[
         $sql->bindValue(":id", $id);
         $sql->execute();
 
-        // Atualiza locais de embarque e desembarque
+        // Atualiza locais na tabela embarque_desembarque
         $sql = $pdo->prepare("UPDATE embarque_desembarque 
-                              SET local_embarque = :local_embarque, local_desembarque = :local_desembarque 
-                              WHERE iduser = :id");
+                            SET local_embarque = :local_embarque, local_desembarque = :local_desembarque 
+                            WHERE iduser = :id");
         $sql->bindValue(":local_embarque", $local_embarque);
         $sql->bindValue(":local_desembarque", $local_desembarque);
         $sql->bindValue(":id", $id);
         $sql->execute();
         
-    } else {
-        // Verifica se o CPF já está cadastrado
+    } else {  // Se NÃO tiver ID, é NOVO CADASTRO
+        
+        // Verifica se CPF já existe no banco
         $sql = $pdo->prepare("SELECT iduser FROM usuarios WHERE cpf = :cpf");
         $sql->bindValue(":cpf", $cpf);
         $sql->execute();
 
-        if ($sql->rowCount() > 0) {
+        if ($sql->rowCount() > 0) {  // Se CPF já cadastrado
             echo "CPF já cadastrado!";
             exit;
         }
 
-        // Cadastra novo usuário
+        // Cria hash da senha para armazenamento seguro
         $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+        
+        // Insere novo usuário na tabela usuarios
         $sql = $pdo->prepare("INSERT INTO usuarios (nome, cpf, pass, sit, admin) VALUES (:nome, :cpf, :senha, :sit, :admin)");
         $sql->bindValue(":nome", $nome);
         $sql->bindValue(":cpf", $cpf);
@@ -53,10 +57,10 @@ if (isset($_POST['nome'], $_POST['cpf'], $_POST['sit'], $_POST['admin'], $_POST[
         $sql->bindValue(":admin", $admin);
         $sql->execute();
 
-        // Pega o ID do novo usuário
+        // Pega ID do novo usuário inserido
         $iduser = $pdo->lastInsertId();
 
-        // Cadastra locais de embarque e desembarque
+        // Insere locais de embarque/desembarque
         $sql = $pdo->prepare("INSERT INTO embarque_desembarque (iduser, local_embarque, local_desembarque) VALUES (:iduser, :local_embarque, :local_desembarque)");
         $sql->bindValue(":iduser", $iduser);
         $sql->bindValue(":local_embarque", $local_embarque);
@@ -64,9 +68,9 @@ if (isset($_POST['nome'], $_POST['cpf'], $_POST['sit'], $_POST['admin'], $_POST[
         $sql->execute();
     }
 
-    // Redireciona após a operação
+    // Feedback e redirecionamento
     echo "Operação realizada com sucesso!";
-    header("Location: cadastro.php");
+    header("Location: cadastro.php");  // Volta para página de cadastro
     exit;
 }
 ?>
