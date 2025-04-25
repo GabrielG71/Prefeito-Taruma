@@ -1,58 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="contato.css">
-    <script defer src="app_contato.js"></script>
+    <!-- Configurações básicas do documento -->
+    <meta charset="UTF-8">  <!-- Define a codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsividade -->
+    <title>Contato</title>  <!-- Título da página -->
+    
+    <!-- Inclusão de frameworks e estilos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="contato.css">  <!-- CSS personalizado -->
+    <script defer src="app_contato.js"></script>  <!-- JavaScript com defer para carregar após o HTML -->
 </head>
 <body>
+    <!-- Cabeçalho da página -->
     <header class="container1">
         <nav class="container-box">
+            <!-- Logo da Prefeitura -->
             <div class="prefeitura-img">
-                <div class="image-container"><a href="#" id="logo_prefeitura"><img src="Imagens/logo-tarumã.png" alt=""></a></div>
+                <div class="image-container">
+                    <a href="#" id="logo_prefeitura">
+                        <img src="Imagens/logo-tarumã.png" alt="Logo da Prefeitura de Tarumã">
+                    </a>
+                </div>
             </div>
+            
+            <!-- Menu Hamburguer (para mobile) -->
             <button class="hamburguer"></button>
+            
+            <!-- Navegação principal -->
             <ul class="nav-list">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="login.php">LOGIN</a></li>
+                <li><a href="index.html">HOME</a></li>  <!-- Link para Home -->
+                <li><a href="login.php">LOGIN</a></li>  <!-- Link para Login -->
             </ul>   
         </nav>
     </header>
+
+    <!-- Conteúdo principal -->
     <main class="">
-        
+        <!-- Formulário de contato -->
         <form method="POST" action="https://formsubmit.co/gabrielgoncalves2981@gmail.com" enctype="multipart/form-data">
-            <h2>CONTATO</h2>
+            <h2>CONTATO</h2>  <!-- Título do formulário -->
+            
+            <!-- Campos do formulário -->
             <label for="name">Nome:</label>
             <input type="name" name="name" id="name" placeholder="Seu nome completo:" class="form-control">
+            
             <label for="email">Email:</label>
             <input type="email" name="email" placeholder="Seu email:" id="email" class="form-control">
+            
             <label for="CPF">CPF:</label>
             <input type="cpf" name="cpf" placeholder="CPF:" id="CPF" class="form-control">
-
+            
             <label for="Assunto">Assunto:</label>
             <textarea name="message" placeholder="Assunto:" id="Assunto" class="form-control"></textarea>
+            
             <label for="Arquivos">Arquivos:</label>
-            <input type="file" name="attachment" accept="image/png, image/jpeg" id="Arquivos: " class="form-control">
+            <input type="file" name="attachment" accept="image/png, image/jpeg" id="Arquivos" class="form-control">
+            
+            <!-- Botão de envio -->
             <button type="submit" class="Env">Enviar</button>
+            
+            <!-- Campo oculto para redirecionamento após envio -->
             <input type="hidden" name="_next" value="https://gabrielg71.github.io/Prefeitura-taruma/obrigado.html">
         </form>
     </main>
+
+    <!-- Rodapé da página -->
     <footer class="footer">
         <div class="container">
+            <!-- Coluna 1: Informações institucionais -->
             <div class="col">
                 <h5>AETA</h5>
                 <p>&copy; 2024 Prefeitura de Tarumã. Todos os direitos reservados.</p>
                 <p>CNPJ: 03.148.712/0001-40</p>
             </div>
+            
+            <!-- Coluna 2: Informações de contato -->
             <div class="col">
                 <h5>Contato</h5>
                 <p>&#128231; E-mail: aetataruma@gmail.com</p>
                 <p>&#128205; Rua Jasmin 296, Centro - Tarumã</p>
                 <p>&#128222; (18) 99646-4673</p>
             </div>
+            
+            <!-- Coluna 3: Links de navegação -->
             <div class="col footer-links">
                 <h5>Navegação</h5>
                 <a href="index.html">Home</a>
