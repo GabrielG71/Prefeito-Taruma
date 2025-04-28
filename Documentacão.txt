@@ -1,0 +1,125 @@
+Documentação do Sistema de Gestão de Transporte Escolar - Transporte de Tarumã
+
+Descrição do Projeto:
+Este é um sistema completo para gestão de transporte escolar desenvolvido para a AETA (Associação de Estudantes de Tarumã). O sistema permite:
+
+Autenticação de Usuários:
+
+Login com CPF e senha
+
+Diferenciação entre usuários comuns e administradores
+
+Controle de sessão e segurança
+
+Gestão de Presenças:
+
+Registro diário de presenças e faltas dos estudantes
+
+Atualização em tempo real dos totais
+
+Histórico por data e por estudante
+
+Interface administrativa para gestão
+
+Cadastro de Usuários:
+
+Cadastro de novos estudantes
+
+Atualização de dados cadastrais
+
+Definição de locais de embarque/desembarque
+
+Relatórios:
+
+Visualização de totais de presenças/faltas
+
+Filtros por data e usuário
+
+Exportação de dados
+
+Principais Arquivos e Funcionalidades:
+
+verifica.php - Script central de autenticação que verifica se o usuário está logado antes de permitir acesso às páginas restritas.
+
+connection.php - Estabelece a conexão com o banco de dados MySQL usando PDO para maior segurança.
+
+Usuario.Class.php - Classe PHP que encapsula todas as operações relacionadas a usuários:
+
+Autenticação (login)
+
+Cadastro
+
+Atualização de dados
+
+Controle de acesso
+
+Páginas Principais:
+
+login.php - Interface de login com validação de credenciais
+
+menu.php - Dashboard para usuários comuns
+
+menu_admin.php - Painel administrativo completo
+
+menu_presencas.php - Controle de frequência dos estudantes
+
+cadastro.php - Cadastro de novos usuários
+
+contato.html - Formulário de contato institucional
+
+Fluxo de Trabalho:
+
+Os administradores registram as presenças diárias
+
+O sistema calcula automaticamente os totais
+
+Os estudantes podem verificar seus históricos
+
+Geração de relatórios para a secretaria de educação
+
+Tecnologias Utilizadas:
+
+PHP 7.4+ para lógica de backend
+
+MySQL/MariaDB para armazenamento de dados
+
+Bootstrap 5 para interface responsiva
+
+JavaScript para interações do cliente
+
+HTML5 e CSS3 para estrutura e estilo
+
+Segurança Implementada:
+
+Proteção contra SQL Injection (PDO prepared statements)
+
+Prevenção contra XSS (htmlspecialchars)
+
+Controle de sessão rigoroso
+
+Validação de todos os inputs
+
+Hash de senhas (password_hash)
+
+Observações:
+O sistema está em pleno funcionamento e atende a necessidade de controle de transporte escolar municipal, garantindo:
+
+Transparência nos registros
+
+Facilidade de uso
+
+Segurança dos dados
+
+Acesso diferenciado conforme perfil de usuário
+
+Próximas Etapas (Sugestões):
+
+Implementação de relatórios PDF
+
+Módulo de notificações para pais/responsáveis
+
+Integração com sistema de geolocalização para registro automático de presença
+
+Painel de métricas e gráficos analíticos
+
+Este documento foi gerado em 05/03/2024 e reflete o estado atual do sistema em desenvolvimento.
